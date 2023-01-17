@@ -1,0 +1,154 @@
+@keyframes spinning {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.container {
+  width: min(21rem, 80%);
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+}
+
+form {
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+  background-color: var(--color-black2);
+  padding: .2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  border-radius: inherit;
+  text-transform: uppercase;
+  font-size: medium;
+}
+
+form label {
+  display: block;
+  width: 100%;
+  cursor: text;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  background-color: inherit;
+  border: none;
+  border-bottom: 1.5px solid var(--border-color);
+  outline: none;
+  color: var(--text-color);
+}
+
+form input, form label {
+  transition: .8s ease;
+}
+
+form label:focus-within {
+  color: var(--color-purple);
+}
+
+form input:focus {
+  border-color: var(--color-purple);
+}
+
+form button {
+  background-color: transparent;
+  border: 1.4px solid var(--border-color);
+  color: var(--text-color);
+  padding: .6rem 1.3rem;
+  cursor: pointer;
+  transition: .4s ease;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+form button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.08);
+}
+
+.spinner {
+  animation: spinning 7s linear infinite;
+  height: 200%;
+  width: 10rem;
+  background-color: var(--secondary-color);
+  position: absolute;
+  z-index: -10;
+  display: flex;
+}
+
+.spinner::before {
+  content: "";
+  background: var(--secondary-color);
+}
+
+.ribbon {
+  position: absolute;
+  width: 120px;
+  height: 13px;
+  background-color: var(--color-blue2);
+  top: 20px;
+  right: -30px;
+  transform: rotate(45deg);
+
+  font-size: .6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ribbon::before {
+  content: "Chalet's";
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: max(21rem, 80%);
+    max-width: 29rem;
+  }
+
+  .form-wrapper {
+    height: 370px;
+  }
+
+  form label {
+    font-size: x-large;
+  }
+
+  form input {
+    border-width: 1.8px;
+  }
+
+  form button { 
+    padding: .9rem 2.2rem;
+    font-size: 1rem;
+    border-width: 1.8px;
+  }
+
+  .spinner {
+    width: 15rem;
+  }
+
+  .ribbon {
+    width: 160px;
+    height: 20px;
+    top: 35px;
+    right: -40px;
+    font-size: small;
+  }
+}

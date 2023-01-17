@@ -59,11 +59,11 @@ form input, form label {
 }
 
 form label:focus-within {
-  color: var(--color-purple);
+  color: var(--secondary-color);
 }
 
 form input:focus {
-  border-color: var(--color-purple);
+  border-color: var(--secondary-color);
 }
 
 form button {
@@ -78,7 +78,7 @@ form button {
 }
 
 form button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--color-blue2);
   transform: scale(1.08);
 }
 

@@ -86,7 +86,7 @@ form button:hover {
   animation: spinning 7s linear infinite;
   height: 200%;
   width: 10rem;
-  background-color: var(--secondary-color);
+  background-color: var(--color-blue2);
   position: absolute;
   z-index: -10;
   display: flex;
